@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Finance</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+	<script src='https://cdn.jsdelivr.net/umbrella/2.0.0/umbrella.min.js'></script>
+	<link href='https://fonts.googleapis.com/css?family=Poppins:400,500,600,700' rel='stylesheet'>
+	<link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+	<section class="search-hero">
+		<div class="container">
+			<nav class="navbar is-transparent">
+				<div class="navbar-brand">
+					<a class="navbar-item" href="https://bulma.io">
+						<img src="img/logo-financer.svg" alt="Financer logo">
+					</a>
+					<a class="search-icon-mobile is-hidden-desktop"><img src="img/icons-search.svg"></a>
+					<div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+				<div class="navbar-menu">
+					<div class="navbar-end">
+						<a class="nav-item" href="#">Loan<span class="arrow-down"></span></a>
+						<a class="nav-item" href="#">Personal Finance<span class="arrow-down"></span></a>
+						<a class="nav-item" href="#">Company<span class="arrow-down"></span></a>
+						<a class="nav-item" href="#">How it works</a>
+						<a class="nav-item is-hidden-touch search-icon"><img src="img/icons-search.svg"></a>
+					</div>
+				</div>
+			</nav>
+			<nav class="breadcrumb is-hidden-touch" aria-label="breadcrumbs">
+				<ul>
+				<li><a href="#">Home</a></li>
+				<li class="is-active"><a href="#" aria-current="page">Search Result</a></li>
+				</ul>
+			</nav>
+			<p class="search-results-title is-hidden-desktop has-text-white has-text-left">
+				<span>12 offers</span> based on your search
+			</p>
+			<div class="compare-offers">
+				<div class="columns is-mobile">
+					<div class="column">
+						<p>Loan amount</p>
+						<div class="range-slider">
+							<h1 class="range-slider__value compare_option_cost">3000</h1>
+							<input class="range-slider__range" type="range" value="3000" min="0" max="10000">
+							
+						</div>
+					</div>
+					<div class="column">
+						<p>Loan term</p>
+						<div class="range-slider">
+							<h1 class="range-slider__value compare_option_month">6 months</h1>
+							<input class="range-slider__range" type="range" value="6" min="0" max="12">
+							
+						</div>
+					</div>
+				</div>
+				<a class="btn-compare-offer">Compare offers</a>
+			</div>
+			<div class="edit-search" id="edit-search">
+				<div class="container">
+					<p class="has-text-right"><a class="close" href="#"><img src="img/close.svg"></a></p class="has-text-right">
+					<h2 class="has-text-white">Edit search</h2>
+					<div class="edit-search-panel">
+						<p>Loan amount</p>
+						<div class="range-slider">
+							<h1 class="range-slider__value compare_option_cost">3000</h1>
+							<input class="range-slider__range" type="range" value="3000" min="0" max="10000">
+						</div>
+						<p>Loan term</p>
+						<div class="range-slider">
+							<h1 class="range-slider__value compare_option_month">6 months</h1>
+							<input class="range-slider__range" type="range" value="6" min="0" max="12">
+						</div>
+						<a class="btn-compare-offer">Compare offers</a>
+					</div>
+					
+				</div>
+				
+			</div>
+			<div class="is-hidden-desktop has-text-centered">
+				<a class="edit-search-btn" href="#edit-search">Edit Search<img src="img/icons-edit2.svg"></a>
+				<a class="filters-btn" >Filters<img src="img/icons-edit.svg"></a>
+			</div>
+		</div>
+	</section>
+	<section class="section search-filter is-hidden-touch">
+		<div class="container">
+			<div class="columns is-mobile">
+				<div class="column filter-option-left">
+					<div class="checkbox">
+						<input type="checkbox" id="a" checked>
+						<label for="a"></label>
+						<span>Recommended Offers only</span>
+					</div>
+					<div class="checkbox">
+						<input type="checkbox" id="b">
+						<label for="b"></label>
+						<span>Free early payback</span>
+					</div>
+					<div class="checkbox">
+						<input type="checkbox" id="c">
+						<label for="c"></label>
+						<span>Credit Score Under 630</span>
+					</div>
+					<div class="checkbox">
+						<input type="checkbox" id="d">
+						<label for="d"></label>
+						<span>Quick Payout</span>
+					</div>
+					<div class="checkbox">
+						<input type="checkbox" id="e">
+						<label for="e"></label>
+						<span>Exclude Loan Brokers</span>
+					</div>
+					<div class="checkbox">
+						<input type="checkbox" id="f">
+						<label for="f"></label>
+						<span>Lenders accepting age of 18-20</span>
+					</div>
+				</div>
+				<div class="column filter-option-right">
+					<div class="columns  is-mobile">
+						<div class="column">
+							<p>State</p>
+							<div>
+								<select class="state-select">
+								  <option>New York City</option>
+								  <option>Kansas</option>
+								  <option>Washington</option>
+								</select>
+							</div>
+						</div>
+						<div class="column">
+							<p>Sort by</p>
+							<div>
+								<select class="sortby-select">
+								  <option>Total Cost</option>
+								  <option>Review</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<a class="apply-filter is-hidden-desktop">
+				Apply filter
+			</a>
+		</div>
+	</section>
+	<section class="section  search-results">
+		<div class="container">
+			<p class="search-results-title is-hidden-touch">
+				<b>12 offers</b> based on your search
+			</p>
+			<div class="search-result">
+				<div class="search-result-detail">
+					<div class="columns flex-wrap is-mobile">
+						<div class="column">
+							<img src ="img/personalloans.jpg"/>
+							<p>Chosen <b>24,944</b> times</p>
+						</div>
+						<div class="column is-hidden-touch">
+							<h1>6 months</h1>
+							<p>Loan Term</p>
+						</div>
+						<div class="column">
+							<h1>5.99-35.99%</h1>
+							<h2>Interest Rate</h2>
+						</div>
+						<div class="column">
+							<h1>$98.23</h1>
+							<h2>Total Cost</h2>
+						</div>
+						<div class="column monthly-cost">
+							<h1>$258.19</h1>
+							<p>Monthly Payback</p>
+						</div>
+						<div class="column is-flex has-featured">
+							<span class="featured">FEATURED</span>
+							<img src="img/icons-rating-featured.svg"/>
+							<img src="img/icons-rating-featured.svg"/>
+							<img src="img/icons-rating-featured.svg"/>
+							<img src="img/icons-rating-featured.svg"/>
+							<img src="img/icons-rating-featured.svg"/>
+							<div class="rating-number">
+								5.0
+							</div>
+							<p>Read<span class="has-text-info has-text-weight-bold"> 92 reviews</span></p>
+						</div>
+					</div>
+					<div class="search-features has-text-centered">
+						<label class="search-feature-heart"><span class = "heart-circle"><img src="img/icons-hart-copy.svg"></span>MOST CHOOSEN</label>
+						<label class="search-feature-star"><span class = "star-circle"><img src="img/path-copy.svg"></span>LOWEST COST</label>
+					</div>
+				</div>
+				<div class="search-result-content">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</div>
+				<div class="search-result-action">
+					<a class="btn-more-info">More info<img src ="img/down-arrow.svg"></a>
+					<a class="btn-get-start">Get started<img src = "img/right-arrow.svg"></a>
+				</div>
+			</div>
+			<div class="search-result">
+				<div class="search-result-detail">
+					<div class="columns flex-wrap is-mobile">
+						<div class="column">
+							<img src ="img/fivekfunds.jpg"/>
+							<p>Chosen <b>24,944</b> times</p>
+						</div>
+						<div class="column is-hidden-touch">
+							<h1>6 months</h1>
+							<p>Loan Term</p>
+						</div>
+						<div class="column">
+							<h1>5.99-35.99%</h1>
+							<h2>Interest Rate</h2>
+						</div>
+						<div class="column">
+							<h1>$98.23</h1>
+							<h2>Total Cost</h2>
+						</div>
+						<div class="column monthly-cost">
+							<h1>$258.19</h1>
+							<p>Monthly Payback</p>
+						</div>
+						<div class="column is-flex">
+							<img src="img/icons-rating.svg"/>
+							<img src="img/icons-rating.svg"/>
+							<img src="img/icons-rating.svg"/>
+							<img src="img/icons-rating.svg"/>
+							<img src="img/icons-rating-full.svg"/>
+							<div class="rating-number">
+								4.0
+							</div>
+							<p>Read<span class="has-text-info has-text-weight-bold"> 80 reviews</span></p>
+						</div>
+					</div>
+					<div class="search-features has-text-centered">
+						<label class="search-feature-thumbs"><span class = "thumbs-circle"><img src="img/icons-hart-copy-2.svg"></span>BEST REVIEWS</label>
+					</div>
+				</div>
+				<div class="search-result-content">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</div>
+				<div class="search-result-action">
+					<a class="btn-more-info">More info<img src ="img/down-arrow.svg"></a>
+					<a class="btn-get-start">Get started<img src = "img/right-arrow.svg"></a>
+				</div>
+			</div>
+			<div class="search-result">
+				<div class="search-result-detail">
+					<div class="columns flex-wrap is-mobile">
+						<div class="column">
+							<img src ="img/upstart.jpg"/>
+							<p>Chosen <b>24,944</b> times</p>
+						</div>
+						<div class="column is-hidden-touch">
+							<h1>6 months</h1>
+							<p>Loan Term</p>
+						</div>
+						<div class="column">
+							<h1>5.99-35.99%</h1>
+							<h2>Interest Rate</h2>
+						</div>
+						<div class="column">
+							<h1>$98.23</h1>
+							<h2>Total Cost</h2>
+						</div>
+						<div class="column monthly-cost">
+							<h1>$258.19</h1>
+							<p>Monthly Payback</p>
+						</div>
+						<div class="column is-flex">
+							<img src="img/icons-rating.svg"/>
+							<img src="img/icons-rating.svg"/>
+							<img src="img/icons-rating.svg"/>
+							<img src="img/icons-rating-half.svg"/>
+							<img src="img/icons-rating-full.svg"/>
+							<div class="rating-number">
+								3.5
+							</div>
+							<p>Read<span class="has-text-info has-text-weight-bold"> 61 reviews</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="search-result-content">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</div>
+				<div class="search-result-action">
+					<a class="btn-more-info">More info<img src ="img/down-arrow.svg"></a>
+					<a class="btn-get-start">Get started<img src = "img/right-arrow.svg"></a>
+				</div>
+			</div>
+			<div class="search-result">
+				<div class="search-result-detail">
+					<div class="columns flex-wrap is-mobile">
+						<div class="column">
+							<img src ="img/monkeykey.jpg"/>
+							<p>Chosen <b>24,944</b> times</p>
+						</div>
+						<div class="column is-hidden-touch">
+							<h1>6 months</h1>
+							<p>Loan Term</p>
+						</div>
+						<div class="column">
+							<h1>5.99-35.99%</h1>
+							<h2>Interest Rate</h2>
+						</div>
+						<div class="column">
+							<h1>$98.23</h1>
+							<h2>Total Cost</h2>
+						</div>
+						<div class="column monthly-cost">
+							<h1>$258.19</h1>
+							<p>Monthly Payback</p>
+						</div>
+						<div class="column is-flex">
+							<img src="img/icons-rating.svg"/>
+							<img src="img/icons-rating.svg"/>
+							<img src="img/icons-rating.svg"/>
+							<img src="img/icons-rating-half.svg"/>
+							<img src="img/icons-rating-full.svg"/>
+							<div class="rating-number">
+								3.5
+							</div>
+							<p>Read<span class="has-text-info has-text-weight-bold"> 61 reviews</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="search-result-content">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</div>
+				<div class="search-result-action">
+					<a class="btn-more-info">More info<img src ="img/down-arrow.svg"></a>
+					<a class="btn-get-start">Get started<img src = "img/right-arrow.svg"></a>
+				</div>
+			</div>
+			<div class="search-result">
+				<div class="search-result-detail">
+					<div class="columns flex-wrap is-mobile">
+						<div class="column">
+							<img src ="img/personalloans.jpg"/>
+							<p>Chosen <b>24,944</b> times</p>
+						</div>
+						<div class="column is-hidden-touch">
+							<h1>6 months</h1>
+							<p>Loan Term</p>
+						</div>
+						<div class="column">
+							<h1>5.99-35.99%</h1>
+							<h2>Interest Rate</h2>
+						</div>
+						<div class="column">
+							<h1>$98.23</h1>
+							<h2>Total Cost</h2>
+						</div>
+						<div class="column monthly-cost">
+							<h1>$258.19</h1>
+							<p>Monthly Payback</p>
+						</div>
+						<div class="column is-flex has-featured">
+							<span class="featured">FEATURED</span>
+							<img src="img/icons-rating-featured.svg"/>
+							<img src="img/icons-rating-featured.svg"/>
+							<img src="img/icons-rating-featured.svg"/>
+							<img src="img/icons-rating-featured.svg"/>
+							<img src="img/icons-rating-featured.svg"/>
+							<div class="rating-number">
+								5.0
+							</div>
+							<p>Read<span class="has-text-info has-text-weight-bold"> 92 reviews</span></p>
+						</div>
+					</div>
+					<div class="search-features has-text-centered">
+						<label class="search-feature-heart"><span class = "heart-circle"><img src="img/icons-hart-copy.svg"></span>MOST CHOOSEN</label>
+						<label class="search-feature-star"><span class = "star-circle"><img src="img/path-copy.svg"></span>LOWEST COST</label>
+					</div>
+				</div>
+				<div class="search-result-content">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</div>
+				<div class="search-result-action">
+					<a class="btn-more-info">More info<img src ="img/down-arrow.svg"></a>
+					<a class="btn-get-start">Get started<img src = "img/right-arrow.svg"></a>
+				</div>
+			</div>
+			<div class="search-result">
+				<div class="search-result-detail">
+					<div class="columns flex-wrap is-mobile">
+						<div class="column">
+							<img src ="img/fivekfunds.jpg"/>
+							<p>Chosen <b>24,944</b> times</p>
+						</div>
+						<div class="column is-hidden-touch">
+							<h1>6 months</h1>
+							<p>Loan Term</p>
+						</div>
+						<div class="column">
+							<h1>5.99-35.99%</h1>
+							<h2>Interest Rate</h2>
+						</div>
+						<div class="column">
+							<h1>$98.23</h1>
+							<h2>Total Cost</h2>
+						</div>
+						<div class="column monthly-cost">
+							<h1>$258.19</h1>
+							<p>Monthly Payback</p>
+						</div>
+						<div class="column is-flex">
+							<img src="img/icons-rating.svg"/>
+							<img src="img/icons-rating.svg"/>
+							<img src="img/icons-rating.svg"/>
+							<img src="img/icons-rating-half.svg"/>
+							<img src="img/icons-rating-full.svg"/>
+							<div class="rating-number">
+								4.0
+							</div>
+							<p>Read<span class="has-text-info has-text-weight-bold"> 80 reviews</span></p>
+						</div>
+					</div>
+					<div class="search-features has-text-centered">
+						<label class="search-feature-thumbs"><span class = "thumbs-circle"><img src="img/icons-hart-copy-2.svg"></span>BEST REVIEWS</label>
+					</div>
+				</div>
+				<div class="search-result-content">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</div>
+				<div class="search-result-action">
+					<a class="btn-more-info">More info<img src ="img/down-arrow.svg"></a>
+					<a class="btn-get-start">Get started<img src = "img/right-arrow.svg"></a>
+				</div>
+			</div>
+			<div class="search-result">
+				<div class="search-result-detail">
+					<div class="columns flex-wrap is-mobile">
+						<div class="column">
+							<img src ="img/upstart.jpg"/>
+							<p>Chosen <b>24,944</b> times</p>
+						</div>
+						<div class="column is-hidden-touch">
+							<h1>6 months</h1>
+							<p>Loan Term</p>
+						</div>
+						<div class="column">
+							<h1>5.99-35.99%</h1>
+							<h2>Interest Rate</h2>
+						</div>
+						<div class="column">
+							<h1>$98.23</h1>
+							<h2>Total Cost</h2>
+						</div>
+						<div class="column monthly-cost">
+							<h1>$258.19</h1>
+							<p>Monthly Payback</p>
+						</div>
+						<div class="column is-flex">
+							<img src="img/icons-rating.svg"/>
+							<img src="img/icons-rating.svg"/>
+							<img src="img/icons-rating.svg"/>
+							<img src="img/icons-rating-half.svg"/>
+							<img src="img/icons-rating-full.svg"/>
+							<div class="rating-number">
+								3.5
+							</div>
+							<p>Read<span class="has-text-info has-text-weight-bold"> 61 reviews</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="search-result-content">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</div>
+				<div class="search-result-action">
+					<a class="btn-more-info">More info<img src ="img/down-arrow.svg"></a>
+					<a class="btn-get-start">Get started<img src = "img/right-arrow.svg"></a>
+				</div>
+			</div>
+			<div class="search-result">
+				<div class="search-result-detail">
+					<div class="columns flex-wrap is-mobile">
+						<div class="column">
+							<img src ="img/monkeykey.jpg"/>
+							<p>Chosen <b>24,944</b> times</p>
+						</div>
+						<div class="column is-hidden-touch">
+							<h1>6 months</h1>
+							<p>Loan Term</p>
+						</div>
+						<div class="column">
+							<h1>5.99-35.99%</h1>
+							<h2>Interest Rate</h2>
+						</div>
+						<div class="column">
+							<h1>$98.23</h1>
+							<h2>Total Cost</h2>
+						</div>
+						<div class="column monthly-cost">
+							<h1>$258.19</h1>
+							<p>Monthly Payback</p>
+						</div>
+						<div class="column is-flex">
+							<img src="img/icons-rating.svg"/>
+							<img src="img/icons-rating.svg"/>
+							<img src="img/icons-rating.svg"/>
+							<img src="img/icons-rating-half.svg"/>
+							<img src="img/icons-rating-full.svg"/>
+							<div class="rating-number">
+								3.5
+							</div>
+							<p>Read<span class="has-text-info has-text-weight-bold"> 61 reviews</span></p>
+						</div>
+					</div>
+				</div>
+				<div class="search-result-content">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</div>
+				<div class="search-result-action">
+					<a class="btn-more-info">More info<img src ="img/down-arrow.svg"></a>
+					<a class="btn-get-start">Get started<img src = "img/right-arrow.svg"></a>
+				</div>
+			</div>
+			<p class="search-results-important has-text-black">
+				<b>Important</b><br/>
+				Loan amounts, interest rates and other loan terms may vary according to your state and credit profile
+			</p>
+		</div>
+	</section>
+	<section class="popular-lenders has-text-centered">
+		<div class="container">
+			<h1>Popular lenders</h1>
+			<h2>The most trusted and highly rated loan companies based on customers reviews</h2>
+			
+			<div class="columns legend-reviews is-desktop">
+				<img class="dot-shape-1" src="img/combined-shape-copy.png"/>
+				<img class="dot-shape-2" src="img/combined-shape-copy.png"/>
+				<div class="column has-background-white">
+					<div class="popular-review-logo"><img src="img/monkeykey.jpg"/></div>
+					<div class="popular-lenders-reviews">
+						<div class="lenders-rating-number">4.5</div>
+						<img src="img/icons-rating-dark.svg"/>
+						<img src="img/icons-rating-dark.svg"/>
+						<img src="img/icons-rating-dark.svg"/>
+						<img src="img/icons-rating-dark.svg"/>
+						<img src="img/icons-rating-half-dark.svg"/>
+					</div>
+					<p class="popular-reviews-text">Based on <span>202 reviews</span></p>
+				</div>
+				<div class="column has-background-white">
+					<div class="popular-review-logo"><img src="img/upstart.jpg"/></div>
+					<div class="popular-lenders-reviews">
+						<div class="lenders-rating-number">4.5</div>
+						<img src="img/icons-rating-dark.svg"/>
+						<img src="img/icons-rating-dark.svg"/>
+						<img src="img/icons-rating-dark.svg"/>
+						<img src="img/icons-rating-dark.svg"/>
+						<img src="img/icons-rating-half-dark.svg"/>
+					
+					</div>
+					<p class="popular-reviews-text">Based on <span>194 reviews</span></p>
+				</div>
+				<div class="column has-background-white">
+					<div class="popular-review-logo"><img src="img/fivekfunds.jpg"/></div>
+					<div class="popular-lenders-reviews">
+						<div class="lenders-rating-number">4.0</div>
+						<img src="img/icons-rating-dark.svg"/>
+						<img src="img/icons-rating-dark.svg"/>
+						<img src="img/icons-rating-dark.svg"/>
+						<img src="img/icons-rating-dark.svg"/>
+						<img src="img/icons-rating-full-dark.svg"/>
+						
+					</div>
+					<p class="popular-reviews-text">Based on <span>288 reviews</span></p>
+				</div>
+			</div>
+			<a class="btn-compare-all">Compare all lenders</a>
+		</div>
+		
+	</section>
+	<footer class="footer">
+		<div class="container">
+			<div class="columns first-footer is-desktop">
+				<div class="column">
+					<img class="footer-logo" src="img/logo-financer-footer.svg"/>
+					<p class="is-size-7 opacity-7">Financer.com is a global comparison service simplifying your choices when you need to borrow or save money. We compare loans, saving accounts, credit cards and more within personal finance.
+					<br><br>Level 2, Palazzo Ca’ Brugnera, Valley Road, BKR9024, Malta
+					</p>
+				</div>
+				<div class="column ">
+					<div>
+						<a>Loan</a><a class="is-hidden-desktop"><img class="down-arrow" src="img/down-arrow-white.svg"></a>
+					</div>
+					<ul class="footer-ul is-hidden-touch">
+						<li>
+							<a>Personal Loan</a>
+						</li>
+						<li>
+							<a>Payday Loan</a>
+						</li>
+						<li>
+							<a>Auto Loan</a>
+						</li>
+						<li>
+							<a>Credit Card</a>
+						</li>
+						<li>
+							<a>Business Loan</a>
+						</li>
+					</ul>
+				</div>
+				<div class="column ">
+					<div>
+						<a>Personal Finance</a><a class="is-hidden-desktop"><img class="down-arrow" src="img/down-arrow-white.svg"></a>
+					</div>
+					<ul class="footer-ul is-hidden-touch">
+						<li>
+							<a>Personal Finance Guide</a>
+						</li>
+						<li>
+							<a>Save and Invest</a>
+						</li>
+						<li>
+							<a>Loan Calculator</a>
+						</li>
+						<li>
+							<a>Compound Interest Calculator</a>
+						</li>
+						<li>
+							<a>Interest Calculator</a>
+						</li>
+					</ul>
+				</div>
+				<div class="column ">
+					<div>
+						<a>Company</a><a class="is-hidden-desktop"><img class="down-arrow" src="img/down-arrow-white.svg"></a>
+					</div>
+					<ul class="footer-ul is-hidden-touch">
+						<li>
+							<a>About Us</a>
+						</li>
+						<li>
+							<a>News</a>
+						</li>
+						<li>
+							<a>Press</a>
+						</li>
+						<li>
+							<a>Careers</a>
+						</li>
+						<li>
+							<a>Partners</a>
+						</li>
+					</ul>
+				</div>
+				<div class="column">
+					<div>
+						<a>Contact Us</a><a class="is-hidden-desktop"><img class="down-arrow" src="img/down-arrow-white.svg"></a>
+					</div>
+					<ul class="footer-ul is-hidden-touch">
+						<li>
+							<a>+1415-317-3557</a>
+						</li>
+						<li>
+							<a>us@financer.com</a>
+						</li>
+					</ul>
+					<p class="facebook-link">
+						<a><img src="img/facebook.svg"> &nbsp;Facebook</a>
+					</p>
+					<p class="twitter-link">
+						<a><img src="img/twitter.svg"> &nbsp;Twitter</a>
+					</p>
+				</div>
+			</div>
+			<div class="second-footer">
+				<div class="opacity-7">
+					financer.com. © 2019
+				</div>
+				<div class="is-hidden-touch">
+					<a>Terms & Conditions</a><a>Privacy Policy</a>
+				</div>
+				<div class="is-hidden-desktop">
+					<a>Terms</a>
+				</div>
+				<div class="is-hidden-desktop">
+					<a>Policy</a>
+				</div>
+			</div>
+			<div class="third-footer">
+				<p class="opacity-7 is-size-7">FINANCER.COM GLOBALLY</p>
+				<div class="third-footer-view-country">
+					<img src="img/united-states-of-america.svg">
+					<p class="is-size-7">&nbsp;&nbsp;United States&nbsp;&nbsp;&nbsp;&nbsp;<a><b>View All Countries</b></a></p>
+				</div>
+				<p class="opacity-7 is-size-7">
+					<b>Disclaimer:</b> Financer.com ("we") is not a lender, a financial advisor or any kind of financial institution. We simply compare financial products and services to help users save money and time. We are not responsible for incorrect information or inaccuracy of interest rates, company information or any other data - responsibility therefore falls on the customer to always check that the information is correct before using a service.
+					When using Financer.com, you accept our cookie policy and our terms and condition. Some of the offers in our comparison are from third party advertisers from which we will receive a compensation.
+				</p>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		// colors of our sliders
+		const settings = {
+			fill: '#2098ce',
+			background: '#d7dcdf' 
+		};
+		const applyFill = slider => {
+			const percentage = 100 * (slider.value - slider.min) / (slider.max - slider.min);
+			// Our background color will change here
+			const bg = `linear-gradient(90deg, ${settings.fill} ${percentage}%, ${settings.background} ${percentage + 0.1}%)`;
+			slider.style.background = bg;
+		}
+		u('.compare_option_cost').each(function(el){
+				el.innerHTML = "$" + Number(el.innerHTML).toLocaleString();
+		});
+		const sliders = u('.range-slider').nodes;
+		Array.prototype.forEach.call(sliders, slider => {
+			slider.querySelector('input').addEventListener('input', event => {
+				if(slider.querySelector('.compare_option_cost')){
+					u('.compare_option_cost').each(function(el){
+						el.innerHTML = "$" + Number(event.target.value).toLocaleString();
+					});
+				}
+				if(slider.querySelector('.compare_option_month')){
+					u('.compare_option_month').each(function(el){
+						el.innerHTML = event.target.value + " months";
+					});
+				}
+				applyFill(event.target);
+			});
+			// Don't wait for the listener, apply it now!
+			applyFill(slider.querySelector('input'));
+		});
+		// Filter button click on mobile
+		u('.filters-btn').on('click',()=>{
+			u('.search-filter').toggleClass('is-hidden-touch');
+			u('.filters-btn').toggleClass('filters-btn-active');
+		});
+		const footernavs = u('.first-footer .column div').nodes;
+		Array.prototype.forEach.call(footernavs, footernav => {
+			footernav.addEventListener('click',event =>{
+				footernav.nextElementSibling.classList.toggle('is-hidden-touch');
+			});
+		});
+		u('.navbar-burger').on('click',()=>{
+			u('.navbar-menu').toggleClass('is-active');
+		});
+	</script>
+  </body>
+</html>
+
